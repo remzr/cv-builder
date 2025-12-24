@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import './App.css'
 
 //Components
@@ -8,10 +8,12 @@ import Cv from './components/Cv'
 
 function App() {
 
+    //Allgemeine Section
     const [preName, setPreName] = useState("");  
     const [familyName, setFamilyName] = useState("");
     const [mailAdress, setMailAdress] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
+    const [algSectionVisible, setAlgSectionVisible] = useState("");
 
     const handleChange = (e) => {
       
@@ -32,24 +34,37 @@ function App() {
                 break;               
         };
       }
-      
+
+      const closeEdit = (f) => {
+        setAlgSectionVisible(!algSectionVisible);
+      }
+
   return (
     <>
-      <Cv 
-        preName={preName} 
-        familyName={familyName} 
-        mailAdress={mailAdress} 
-        phoneNumber={phoneNumber}
-      />
-      <Section  
-        handleChange={handleChange}
-        preName={preName} 
-        familyName={familyName} 
-        mailAdress={mailAdress} 
-        phoneNumber={phoneNumber}
-      />
+
+      {algSectionVisible && (
+        <Section  
+          handleChange={handleChange}
+          closeEdit={closeEdit}
+          preName={preName} 
+          familyName={familyName} 
+          mailAdress={mailAdress} 
+          phoneNumber={phoneNumber}
+        />
+      )}
+      <main>
+        <Cv 
+          preName={preName} 
+          familyName={familyName} 
+          mailAdress={mailAdress} 
+          phoneNumber={phoneNumber}
+        />
+        <button onClick={() => setAlgSectionVisible(!algSectionVisible)}>
+          Persönliche Angaben bearbeiten
+        </button>
+      </main>
     </>
-  );
-};
+  )
+}
 
 export default App

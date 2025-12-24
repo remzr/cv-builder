@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from "react";
 
-export default function Section({handleChange, preName, familyName, mailAdress, phoneNumber}) {
+export default function Section({handleChange, closeEdit, preName, familyName, mailAdress, phoneNumber}) {
 
     return(
         <form>
@@ -20,7 +20,7 @@ export default function Section({handleChange, preName, familyName, mailAdress, 
                         <input type="tel" id="phoneNumber" placeholder={phoneNumber} onChange={handleChange} />
                     </label>
                 <p>
-                    <input class="submitButton" type="submit" placeholder="Speichern" />
+                    <button class="submitButton" type="submit" onClick={closeEdit}>Speichern</button>
                 </p>
             </fieldset>
         </form>

@@ -1,30 +1,6 @@
 import { useState } from "react";
 
-export default function Section() {
-    const [preName, setPreName] = useState("");
-    const [familyName, setFamilyName] = useState("");
-    const [mailAdress, setMailAdress] = useState("");
-    const [phoneNumber, setPhoneNumber] = useState("");
-
-    function handleChange(e) {
-        let targetField = e.target.value;
-        console.log(e.target.value);
-
-        switch (e.target.id) {
-            case "preName":
-                setPreName(targetField);
-                break;
-            case "familyName":
-                setFamilyName(targetField);
-                break;
-            case "mailAdress":
-                setMailAdress(targetField);
-                break;
-            case "phoneNumber":
-                setPhoneNumber(targetField);
-                break;                
-        }
-    }
+export default function Section({preName, familyName, mailAdress, phoneNumber, handleChange}) {
 
     return(
         <form>

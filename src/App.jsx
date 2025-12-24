@@ -34,16 +34,16 @@ function App() {
   return (
     <>
       <Cv 
-        preName={"Remo"} 
-        familyName={"Moser"} 
-        mailAdress={"remo@mail.com"} 
-        phoneNumber={"+44 999 99 99"}
+        preName={preName} 
+        familyName={familyName} 
+        mailAdress={mailAdress} 
+        phoneNumber={phoneNumber}
       />
       <Section  
-        preName={"Remo"} 
-        familyName={"Moser"} 
-        mailAdress={"remo@mail.com"} 
-        phoneNumber={"+44 999 99 99"}
+        preName={preName} 
+        familyName={familyName} 
+        mailAdress={mailAdress} 
+        phoneNumber={phoneNumber}
       />
     </>
   );

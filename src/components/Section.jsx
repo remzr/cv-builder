@@ -1,6 +1,7 @@
+import React from 'react';
 import { useState } from "react";
 
-export default function Section({preName, familyName, mailAdress, phoneNumber, handleChange}) {
+export default function Section({handleChange, preName, familyName, mailAdress, phoneNumber}) {
 
     return(
         <form>

@@ -1,5 +1,6 @@
-import './App.css'
+import React from 'react';
 import { useCallback, useState } from 'react';
+import './App.css'
 
 //Components
 import Section from './components/section'
@@ -12,9 +13,9 @@ function App() {
     const [mailAdress, setMailAdress] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
 
-    /* const handleChange = useCallback((e) => { //Not working yet
+    const handleChange = (e) => {
+      
         let targetField = e.target.value;
-        console.log(e.target.value);
 
         switch (e.target.id) {
             case "preName":
@@ -28,9 +29,10 @@ function App() {
                 break;
             case "phoneNumber":
                 setPhoneNumber(targetField);
-                break;                
-        };*/
-
+                break;               
+        };
+      }
+      
   return (
     <>
       <Cv 
@@ -40,6 +42,7 @@ function App() {
         phoneNumber={phoneNumber}
       />
       <Section  
+        handleChange={handleChange}
         preName={preName} 
         familyName={familyName} 
         mailAdress={mailAdress} 
